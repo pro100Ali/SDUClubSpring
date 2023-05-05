@@ -4,26 +4,33 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Required;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "student")
+@Table(name = "news")
 @NoArgsConstructor(force = true)
 @RequiredArgsConstructor
-public @Data class Student {
+public @Data
+class News {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
-    @NonNull
-    @Column(name = "name")
-    private String name;
-    @Column(name = "address")
-    @NonNull
-    private String address;
 
+    @Column(name = "title")
+    @NonNull
+    private String title;
 
+    @Column(name = "description")
+    @NonNull
+    private String description;
+
+//    @NonNull
+
+    @ManyToOne()
+    @JoinColumn(name = "club_id")
+    private Club club;
+
+    // getters and setters
 
 }
