@@ -52,27 +52,19 @@
 //        membershipRepository.deleteById(id);
 //    }
 //}
-
-
 package com.arjuncodes.studentsystem.controller;
 
 import com.arjuncodes.studentsystem.model.Club;
-import com.arjuncodes.studentsystem.model.Student;
-import com.arjuncodes.studentsystem.repository.NewsRepository;
 import com.arjuncodes.studentsystem.service.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 @RequestMapping("/clubs")
 @CrossOrigin
 public class ClubController {
     @Autowired
     private ClubService clubService;
-
-
     @GetMapping("/{id}")
     public Club getClubById(@PathVariable int id) {
         return clubService.getClubById(id);
@@ -88,6 +80,4 @@ public class ClubController {
     public List<Club> list(){
         return clubService.getAllClubs();
     }
-
-
 }

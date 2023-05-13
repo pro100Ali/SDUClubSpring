@@ -34,5 +34,4 @@ public class ClubServiceImpl implements ClubService {
     @Autowired
     private NewsRepository newsRepository;
 
-
 }

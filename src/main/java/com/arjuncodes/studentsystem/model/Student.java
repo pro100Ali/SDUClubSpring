@@ -24,6 +24,4 @@ public @Data class Student {
     @NonNull
     private String address;
 
-
-
 }

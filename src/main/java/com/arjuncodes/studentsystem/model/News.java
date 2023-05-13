@@ -4,17 +4,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "news")
 @NoArgsConstructor(force = true)
+@RequestMapping("/clubs")
+
 @RequiredArgsConstructor
 public @Data
 class News {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "title")
@@ -25,12 +29,6 @@ class News {
     @NonNull
     private String description;
 
-//    @NonNull
-
-    @ManyToOne()
-    @JoinColumn(name = "club_id")
-    private Club club;
-
-    // getters and setters
-
+    public void setClub(Club club) {
+    }
 }

@@ -11,5 +11,6 @@ public interface ClubService {
     public Club saveClub(Club club);
     public List<Club> getAllClubs();
 
-    public Club getClubById(int id);
+        public Club getClubById(int id);
+
 }
